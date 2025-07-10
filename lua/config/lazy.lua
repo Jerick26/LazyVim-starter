@@ -18,8 +18,17 @@ require("lazy").setup({
     spec = {
         -- add LazyVim and import its plugins
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+        { import = "lazyvim.plugins.extras.lang.python" },
         -- import/override with your plugins
         { import = "plugins" },
+        -- highlight brackets and goto %, for help type :h vim-matchup
+        {
+            "andymass/vim-matchup",
+            event = "BufReadPost",
+            config = function()
+                vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
+            end,
+        },
     },
     defaults = {
         -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
