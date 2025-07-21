@@ -7,8 +7,8 @@ return {
     },
     cmd = "Neotree",
     keys = {
-        { "<leader>E", "<cmd>Neotree focus<cr>", desc = "Focus Explorer" },
         { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
+        { "<leader>E", "<cmd>Neotree focus<cr>", desc = "Focus Explorer" },
     },
     opts = {
         close_if_last_window = true,

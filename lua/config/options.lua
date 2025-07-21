@@ -16,6 +16,10 @@ opt.smartcase = true -- Don't ignore case with capitals
 -- vim.opt.mouse = "a" -- Enable mouse mode
 -- vim.opt.clipboard = "unnamedplus" -- 系统剪贴板
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
+-- Reduce wait time for key sequences (e.g., mappings)
+opt.timeoutlen = 500  -- Default is 1000 ms (adjust between 200-500 ms)
+-- Ensure terminal key codes time out quickly
+opt.ttimeoutlen = 10  -- Default is 50 ms (keep this low)
 
 vim.g.snacks_scroll = false -- 禁用 snacks.nvim 滚动增强（提升大文件性能）
 vim.g.mapleader = ","

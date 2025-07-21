@@ -10,3 +10,6 @@ map("n", "<leader>q", "<cmd>q<cr>", { desc = "退出" })
 -- 窗口管理
 map("n", "<leader>sh", "<cmd>split<cr>", { desc = "水平分屏" })
 map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "垂直分屏" })
+
+-- enable auto format
+-- map("n", "<leader>uf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Disable the default format on save" })
