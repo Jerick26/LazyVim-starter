@@ -20,6 +20,7 @@ opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clip
 opt.timeoutlen = 500  -- Default is 1000 ms (adjust between 200-500 ms)
 -- Ensure terminal key codes time out quickly
 opt.ttimeoutlen = 10  -- Default is 50 ms (keep this low)
+opt.tags = './tags;/'
 
 vim.g.snacks_scroll = false -- 禁用 snacks.nvim 滚动增强（提升大文件性能）
 vim.g.mapleader = ","

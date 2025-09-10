@@ -1,6 +1,8 @@
-{
+return {
   "stevearc/conform.nvim",
-  dependencies = { "mason.nvim" },
+  dependencies = {
+    "mason-org/mason.nvim",
+  },
   lazy = true,
   cmd = "ConformInfo",
   keys = {
@@ -35,31 +37,34 @@
   end,
   opts = function()
     local plugin = require("lazy.core.config").plugins["conform.nvim"]
-    if plugin.config ~= M.setup then
-      LazyVim.error({
-        "Don't set `plugin.config` for `conform.nvim`.\n",
-        "This will break **LazyVim** formatting.\n",
-        "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
-      }, { title = "LazyVim" })
-    end
     ---@type conform.setupOpts
     local opts = {
       default_format_opts = {
-        timeout_ms = 3000,
+        timeout_ms = 2000,
         async = false, -- not recommended to change
         quiet = false, -- not recommended to change
         lsp_format = "fallback", -- not recommended to change
       },
       formatters_by_ft = {
-        lua = { "stylua" },
-        fish = { "fish_indent" },
-        sh = { "shfmt" },
+        python = { "black" },
+        lua = { 'stylua' },
+        sh = { 'shfmt' },
+        html = { 'djlint' },
+        go = { 'gofmt', 'goimports' },
+        c = { 'clang_format' },
+        cmake = { "cmake_format" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
         injected = { options = { ignore_errors = true } },
+        clang_format = {
+          prepend_args = { '--style=file', '--fallback-style=LLVM' },
+        },
+        shfmt = {
+          prepend_args = { '-i', '4' },
+        },
         -- # Example of using dprint only when a dprint.json file is present
         -- dprint = {
         --   condition = function(ctx)
@@ -75,5 +80,5 @@
     }
     return opts
   end,
-  config = M.setup,
+  -- config = M.setup
 }

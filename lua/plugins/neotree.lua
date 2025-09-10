@@ -56,7 +56,7 @@ return {
                 ["a"] = "add",
                 ["d"] = "delete",
                 ["rn"] = "rename",
-                ["y"] = "copy_to_clipboard",
+                -- ["y"] = "copy_to_clipboard",
                 ["x"] = "cut_to_clipboard",
                 ["p"] = "paste_from_clipboard",
                 ["u"] = "navigate_up", -- 跳转到上级目录
