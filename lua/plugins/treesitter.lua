@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate", -- Command to run after installation to update parsers
     config = function()
         require("nvim-treesitter.configs").setup({

@@ -4,7 +4,6 @@ return {
     cmd = { "Outline", "OutlineOpen" },
     keys = { { "<leader>o", "<cmd>Outline<cr>", desc = "Toggle Outline" } },
     dependencies = { -- 添加这行
-        "nvim-treesitter/nvim-treesitter", -- Treesitter 支持
         "mason-org/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig", -- LSP 支持
         "epheien/outline-ctags-provider.nvim",
