@@ -11,7 +11,7 @@ return {
     config = function()
       require('outline').setup({
         providers = {
-          priority = { "lsp", "markdown", "norg", "ctags", "treesitter",  }, -- 指定提供程序优先级
+          priority = { "lsp", "markdown", "norg", "ctags",  }, -- 指定提供程序优先级
           lsp = {
               -- 如果 LSP 服务器支持 hierarchicalDocumentSymbolSupport
               hierarchical_symbols = true,

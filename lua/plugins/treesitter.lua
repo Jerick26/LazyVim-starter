@@ -24,5 +24,10 @@ return {
             },
             indent = { enable = true },
         })
+        require("vim.treesitter.query").set(
+            "markdown",
+            "highlights",
+            "(fenced_code_block_delimiter) @punctuation.delimiter"
+        )
     end,
 }
